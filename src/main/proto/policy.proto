@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package com.insurance;
+
+service PolicyService {
+  rpc GetPolicy (PolicyRequest) returns (PolicyResponse);
+  rpc CreatePolicy (Policy) returns (PolicyResponse);
+}
+
+message PolicyRequest {
+  string policyId = 1;
+}
+
+message Policy {
+  string policyId = 1;
+  string policyNumber = 2;
+  string holderName = 3;
+  double coverageAmount = 4;
+  string startDate=5;
+  string endDate=6;
+}
+
+message PolicyResponse {
+  string policyId = 1;
+  string policyNumber = 2;
+  string holderName = 3;
+  double coverageAmount = 4;
+  string startDate=5;
+  string endDate=6;
+}
